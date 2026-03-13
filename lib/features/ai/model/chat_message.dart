@@ -5,14 +5,12 @@ class ChatMessage {
   final String text;
   final MessageSender sender;
   final DateTime timestamp;
-  final String? imageUrl;     // Para mostrar el gráfico de la imagen
+  final String? imageUrl;    
   final MessageType type;     
   
-  // Nuevos campos para el "Análisis de Daiko"
-  final String? trend;        // Ej: "Alcista"
-  final String? rsiLevel;     // Ej: "62.4 (Neutral)"
-
-  ChatMessage({
+  
+  final String? trend;
+  final String? rsiLevel;       ChatMessage({
     required this.text,
     required this.sender,
     required this.timestamp,
@@ -22,7 +20,6 @@ class ChatMessage {
     this.rsiLevel,
   });
 
-  // Esto nos servirá cuando Gemini nos devuelva datos estructurados
   factory ChatMessage.fromJson(Map<String, dynamic> json) {
     return ChatMessage(
       text: json['text'] ?? '',

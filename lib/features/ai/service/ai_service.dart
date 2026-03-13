@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 import '../model/chat_message.dart';
 
 class AIService {
-  final String _apiKey = 'TU_API_KEY_AQUI'; 
-  final String _url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+  final String _apiKey = 'AIzaSyDsTtd1zaRUyjguAu4nVFrYDB0FdyMRi9E'; 
+  final String _url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
   Future<ChatMessage> sendMessageToDaiko(String prompt) async {
     try {
@@ -25,7 +25,7 @@ class AIService {
               ]
             }
           ],
-          // Esto le indica a Gemini que responda en formato JSON puro
+      
           "generationConfig": {
             "responseMimeType": "application/json"
           }
